@@ -1,0 +1,39 @@
+Pri,Question,Teaming Stages,Appears (Day),Frequency,Type,Role,Required?,Conditions,Mapping
+1,How would you rate the team's collaboration?,Norming,1,60,Rating scale,Admin,Yes,Always,Collaboration
+1,How would you rate the team's engagement?,Forming,3,60,Rating scale,Admin,Yes,Always,Engagement
+1,How would you rate the team's communications?,Performing,5,60,Rating scale,Admin,Yes,Always,Communication
+1,How would you rate your own communications?,All,7,60,Rating scale,Admin,Yes,Always,Communication
+1,How would you rate your relationships with other team members?,Norming,9,60,Rating scale,Admin,Yes,Always,Trust
+1,How would you rate the relationships between the team members?,Forming,11,60,Rating scale,Admin,Yes,Always,Trust
+1,How would you rate your own level of collaboration with other team members?,Performing,13,60,Rating scale,Admin,Yes,Always,Collaboration
+1,How would you rate your own level of engagement?,All,15,60,Rating scale,Admin,Yes,Always,Engagement
+1,Do you feel your team has sufficient resources?,Norming,17,60,Rating scale,Admin,Yes,Always,Resources
+1,Do you feel your team's goals and roles are clear?,Forming,19,60,Rating scale,Admin,Yes,Always,Clarity
+1,Do you feel there is a good trust environment for your team?,Performing,21,60,Rating scale,User,Yes,Always,Trust
+1,Do you feel the team has good management?,All,23,60,Rating scale,User,Yes,Always,Management
+2,Do you feel this is a good project for your organization?,Norming,25,20,Rating scale,User,Yes,Rare,Collaboration
+2,Do you feel your team is currently productive?,Forming,27,20,Rating scale,User,Yes,Rare,Engagement
+2,Do you feel you are currently productive?,Performing,29,20,Rating scale,User,Yes,Rare,Communication
+2,Do you think the project will get done on time and on budget?,All,31,20,Rating scale,User,Yes,Rare,Communication
+2,Do you find your work interesting and rewarding?,Norming,33,20,Rating scale,User,Yes,Rare,Trust
+2,Do you feel your team has good morale?,Forming,35,20,Rating scale,User,Yes,Rare,Trust
+2,Do you feel your team works well together?,Performing,37,20,Rating scale,User,Yes,Rare,Collaboration
+2,How much do you trust your team members to do their part?,All,39,20,Rating scale,User,Yes,Rare,Engagement
+2,Do you feel your team leader has good values?,Norming,41,20,Rating scale,User,Yes,Rare,Resources
+2,Do you feel appreciated for your work?,Forming,43,20,Rating scale,User,Yes,Rare,Clarity
+2,Do you feel your team members are properly recognized for their contributions?,Performing,45,20,Rating scale,User,Yes,Rare,Trust
+2,Do you find hiiiipe helpful?,All,47,20,Rating scale,User,Yes,Rare,Management
+2,Do you feel you can learn from your teammates?,Norming,49,20,Rating scale,User,Yes,Rare,Collaboration
+2,Do you feel OKRs are reasonably set?,Forming,51,20,Rating scale,User,Yes,Rare,Engagement
+2,Do you feel you are able to complete your tasks within regular working hours?,Performing,53,20,Rating scale,User,Yes,Medium,Communication
+2,Do you feel like you have the right skill set for this project?,All,55,20,Rating scale,User,Yes,Medium,Communication
+2,Do you feel your team has the right skill set for this project?,Norming,57,31,Rating scale,User,Yes,Medium,Trust
+2,Are you learning new skills with this project?,Forming,59,31,Rating scale,User,Yes,Medium,Trust
+2,Do you feel this project will help your career?,Performing,61,31,Rating scale,User,Yes,Medium,Collaboration
+2,Are you able to focus on your work?,All,63,31,Rating scale,User,Yes,Medium,Engagement
+2,Do you feel there is an appropriate level of meetings?,Norming,65,31,Rating scale,User,Yes,Medium,Resources
+2,Do you attend daily standups?,Forming,67,31,Rating scale,User,Yes,Medium,Clarity
+2,Do you feel you are encouraged to innovate?,Performing,69,31,Rating scale,Both,Yes,Medium,Trust
+2,Are you passionate to make this project a success?,All,71,31,Rating scale,Both,Yes,Medium,Management
+2,Do you feel you have all the support your need to succeed at this project?,Norming,73,31,Rating scale,Both,Yes,Medium,Clarity
+2,Do you feel you are given enough autonomy to do a great job?,Forming,75,31,Rating scale,Both,Yes,Medium,Trust

@@ -1,0 +1,63 @@
+<section class="pt-2 pb-2 bg-dark inner-header">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h3 class="mt-3 text-white"><%= link_to "Rails | React", root_path, method: :get %></h3>
+		</div>
+	</div>
+</div>
+</section>
+
+<main class="pt-5">
+  <div class="card mb-5">
+    <div class="card-header">
+    	<%= link_to delete_all_data_path, method: :delete do %>
+    		<button class="btn btn-danger float-right">Delete All Data</button>
+  		<% end %>
+	    <%= render 'homes/new' %>
+	  </div>
+    <div class="card-block p-0">
+      <table class="table table-bordered table-sm m-0">
+        <thead class="">
+          <tr>
+            <th><%= sortable "pri" %><span class="sort_column"><%= (params[:sort] == "pri") ? ((params[:direction] == "asc") ? "▾" : "▴") : "" %></span></th>
+            <th><%= sortable "question" %><span class="sort_column"><%= (params[:sort] == "question") ? ((params[:direction] == "asc") ? "▾" : "▴") : "" %></span></th>
+            <th><%= sortable "teaming_stage" %><span class="sort_column"><%= (params[:sort] == "teaming_stage") ? ((params[:direction] == "asc") ? "▾" : "▴") : "" %></span></th>
+            <th><%= sortable "appear_days" %><span class="sort_column"><%= (params[:sort] == "appear_days") ? ((params[:direction] == "asc") ? "▾" : "▴") : "" %></span></th>
+            <th><%= sortable "frequency" %><span class="sort_column"><%= (params[:sort] == "frequency") ? ((params[:direction] == "asc") ? "▾" : "▴") : "" %></span></th>
+            <th><%= sortable "q_type" %><span class="sort_column"><%= (params[:sort] == "q_type") ? ((params[:direction] == "asc") ? "▾" : "▴") : "" %></span></th>
+            <th><%= sortable "required" %><span class="sort_column"><%= (params[:sort] == "required") ? ((params[:direction] == "asc") ? "▾" : "▴") : "" %></span></th>
+            <th><%= sortable "conditions" %><span class="sort_column"><%= (params[:sort] == "conditions") ? ((params[:direction] == "asc") ? "▾" : "▴") : "" %></span></th>
+            <th><%= sortable "role_id" %><span class="sort_column"><%= (params[:sort] == "role_id") ? ((params[:direction] == "asc") ? "▾" : "▴") : "" %></span></th>
+            <th><%= sortable "mapping_id" %><span class="sort_column"><%= (params[:sort] == "mapping_id") ? ((params[:direction] == "asc") ? "▾" : "▴") : "" %></span></th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        	<% @questions.each do |question| %>
+	          <tr>
+	            <td class="text-center"><%= question.pri %></td>
+	            <td><%= question.question %></td>
+	            <td class="text-center"><%= question.teaming_stage %></td>
+	            <td class="text-center"><%= question.appear_days %></td>
+	            <td class="text-center"><%= question.frequency %></td>
+	            <td class="text-center"><%= question.q_type %></td>
+	            <td class="text-center"><%= question.required %></td>
+	            <td class="text-center"><%= question.conditions %></td>
+	            <td class="text-center"><%= question.role.name %></td>
+	            <td class="text-center"><%= question.mapping.name %></td>
+	            <td class="text-center">
+	            	<%= link_to question_destroy_path(question_id: question.id), method: :delete do %>
+					    		<button class="btn btn-danger">x</button>
+					  		<% end %>
+  						</td>
+	          </tr>
+					<% end %>          
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="center">
+  	<%= will_paginate @questions, class: "pagination" %>
+  </div>
+</main>

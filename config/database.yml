@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: csv_data_new
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+
+production:
+  <<: *default
+  database: csv_data_new
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432

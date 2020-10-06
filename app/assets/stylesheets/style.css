@@ -1,0 +1,56 @@
+.center {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a, .pagination em.current {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination em.current {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {
+	background-color: #ddd;
+}
+
+.table tr th a:hover {
+	text-decoration: none;
+}
+
+.table th span.sort_column {
+  float: right;
+}
+
+html {
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.table th {
+	font-size: 12px;
+	text-align: center;
+}
+.pt-5, .py-5 {
+  padding: 1rem!important;
+}
+.mt-3.text-white a {
+	text-decoration: none;
+	color: #fff;
+}
