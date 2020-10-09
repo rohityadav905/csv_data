@@ -1,24 +1,24 @@
 class HomesController < ApplicationController
 	helper_method :sort_column, :sort_direction
 	before_action :get_question, only: [:destroy]
-	
+
 	# Show all questions
 	def index
 		@questions = Question.all.paginate(page: params[:page], per_page: 10).order(sort_column + " " + sort_direction)
 	end
 
-	# Import CSV data in PostgreSql tables
+# Import CSV data in PostgreSql tables
 	def import_csv
 		begin
 			file = Rails.root.join("public", "CSV_Data.csv")	             
-      CSV.foreach(file, headers: true) do |row|
-      	mapping  =  Mapping.find_or_create_by(name: row["Mapping"])
-      	role     =  Role.find_or_create_by(name: row["Role"])
-      	question =  role.questions.find_or_create_by(pri: row["Pri"], question: row["Question"], teaming_stage: row["Teaming Stages"], appear_days: row["Appears (Day)"], frequency: row["Frequency"], q_type: row["Type"], required: row["Required?"], conditions: row["Conditions"], mapping_id: mapping.id)
-      	puts "Question - #{question.question}, Mapping - #{mapping.name}, Role - #{role.name} imported successfully."
-      end
-      puts "CSV data imported successfully."
-      redirect_to root_path
+			CSV.foreach(file, headers: true) do |row|
+				mapping  =  Mapping.find_or_create_by(name: row["Mapping"])
+				role     =  Role.find_or_create_by(name: row["Role"])
+				question =  role.questions.find_or_create_by(pri: row["Pri"], question: row["Question"], teaming_stage: row["Teaming Stages"], appear_days: row["Appears (Day)"], frequency: row["Frequency"], q_type: row["Type"], required: row["Required?"], conditions: row["Conditions"], mapping_id: mapping.id)
+				puts "Question - #{question.question}, Mapping - #{mapping.name}, Role - #{role.name} imported successfully."
+			end
+			puts "CSV data imported successfully."
+			redirect_to root_path
 		rescue => e
 			Rails.logger.info e.message		
 		end
@@ -49,15 +49,15 @@ class HomesController < ApplicationController
 	end
 
 	private
-	  def sort_column
-	    Question.column_names.include?(params[:sort]) ? params[:sort] : "pri"
-	  end
-	  
-	  def sort_direction
-	    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-	  end
+		def sort_column
+			Question.column_names.include?(params[:sort]) ? params[:sort] : "pri"
+		end
 
-	  def get_question
-	  	@question = Question.find(params[:question_id])
-	  end
+		def sort_direction
+			%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+		end
+
+		def get_question
+			@question = Question.find(params[:question_id])
+		end
 end
