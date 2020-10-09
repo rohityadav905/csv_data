@@ -7,7 +7,7 @@ class HomesController < ApplicationController
 		@questions = Question.all.paginate(page: params[:page], per_page: 10).order(sort_column + " " + sort_direction)
 	end
 
-# Import CSV data in PostgreSql tables
+	# Import CSV data in PostgreSql tables
 	def import_csv
 		begin
 			file = Rails.root.join("public", "CSV_Data.csv")	             
@@ -49,14 +49,17 @@ class HomesController < ApplicationController
 	end
 
 	private
+		# Sort the columns
 		def sort_column
 			Question.column_names.include?(params[:sort]) ? params[:sort] : "pri"
 		end
 
+		# Change the sort column asc/desc
 		def sort_direction
 			%w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
 		end
 
+		# Get question with ID
 		def get_question
 			@question = Question.find(params[:question_id])
 		end
